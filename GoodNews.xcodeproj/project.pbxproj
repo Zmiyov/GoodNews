@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		A52E9A9629088201000B574C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52E9A9529088201000B574C /* AppDelegate.swift */; };
 		A52E9A9829088202000B574C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52E9A9729088202000B574C /* SceneDelegate.swift */; };
-		A52E9A9A29088202000B574C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52E9A9929088202000B574C /* ViewController.swift */; };
 		A52E9A9D29088202000B574C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52E9A9B29088202000B574C /* Main.storyboard */; };
 		A52E9A9F29088204000B574C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A52E9A9E29088204000B574C /* Assets.xcassets */; };
 		A52E9AA229088204000B574C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52E9AA029088204000B574C /* LaunchScreen.storyboard */; };
+		A52E9AAB29090BAD000B574C /* NewsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52E9AAA29090BAD000B574C /* NewsListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A52E9A9229088201000B574C /* GoodNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A52E9A9529088201000B574C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A52E9A9729088202000B574C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A52E9A9929088202000B574C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A52E9A9C29088202000B574C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A52E9A9E29088204000B574C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A52E9AA129088204000B574C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A52E9AA329088204000B574C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A52E9AAA29090BAD000B574C /* NewsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +56,23 @@
 		A52E9A9429088201000B574C /* GoodNews */ = {
 			isa = PBXGroup;
 			children = (
+				A52E9AA929090B77000B574C /* Controllers */,
 				A52E9A9529088201000B574C /* AppDelegate.swift */,
 				A52E9A9729088202000B574C /* SceneDelegate.swift */,
-				A52E9A9929088202000B574C /* ViewController.swift */,
 				A52E9A9B29088202000B574C /* Main.storyboard */,
 				A52E9A9E29088204000B574C /* Assets.xcassets */,
 				A52E9AA029088204000B574C /* LaunchScreen.storyboard */,
 				A52E9AA329088204000B574C /* Info.plist */,
 			);
 			path = GoodNews;
+			sourceTree = "<group>";
+		};
+		A52E9AA929090B77000B574C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A52E9AAA29090BAD000B574C /* NewsListTableViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +146,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A52E9A9A29088202000B574C /* ViewController.swift in Sources */,
 				A52E9A9629088201000B574C /* AppDelegate.swift in Sources */,
+				A52E9AAB29090BAD000B574C /* NewsListTableViewController.swift in Sources */,
 				A52E9A9829088202000B574C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
