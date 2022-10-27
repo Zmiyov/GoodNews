@@ -10,20 +10,31 @@ import UIKit
 
 class NewsListTableViewController: UITableViewController {
     
+    private var articleListViewModel: ArticleListViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
          
         setup()
+        setupTableView()
         setupNavC()
     }
     
     private func setup() {
         let url = URL(string: "https://newsapi.org/v2/everything?q=tesla&from=2022-09-26&sortBy=publishedAt&apiKey=d640debcdbc34953bf5cae9f64c94ddb")!
         
-        Webservice().getArticles(url: url) { _ in
+        Webservice().getArticles(url: url) { articles in
             
+            if let articles = articles {
+                self.articleListViewModel = ArticleListViewModel(articles: articles)
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
-
+    }
+    
+    private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         //        tableView.backgroundColor = .gray
@@ -42,5 +53,22 @@ class NewsListTableViewController: UITableViewController {
 
     }
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return self.articleListViewModel == nil ? 0 : self.articleListViewModel.numberOfSection
+    }
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.articleListViewModel.numberOfRowsInSection(section)
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath ) as? ArticleTableViewCell else { fatalError("ArticleTableViewCell not found") }
+        
+        let articleVM = self.articleListViewModel.articleAtIndex(indexPath.row)
+        
+        cell.titleLabel.text = articleVM.title
+        cell.descriptionLabel.text = articleVM.description
+        return cell
+    }
 }
